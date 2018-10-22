@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zsg="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ebebef"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/deepskyblue"
+        android:text="@string/center"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       >
+
+        <ImageView
+            android:id="@+id/iv_blur"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/iv_blur"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+            <ImageView
+                android:id="@+id/user_line"
+                android:layout_width="1dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="15dp"
+                android:layout_centerHorizontal="true"
+                android:background="@color/white"/>
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/user_line"
+                android:textSize="17sp"
+                android:textColor="@color/white"
+                android:text="saber"/>
+
+            <TextView
+                android:id="@+id/user_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:textSize="17sp"
+                android:textColor="@color/white"
+                android:layout_toRightOf="@id/user_line"
+                android:text="173****4092"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <com.sunofbeaches.mainlooper.item_view
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:background="@color/white"
+        zsg:show_bottomline="true"
+        zsg:show_leftimg="@drawable/guanli"
+        zsg:show_text="地址管理" />
+
+    <com.sunofbeaches.mainlooper.item_view
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:background="@color/white"
+        zsg:show_bottomline="true"
+        zsg:show_leftimg="@drawable/security"
+        zsg:show_text="安全中心" />
+
+    <com.sunofbeaches.mainlooper.item_view
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:background="@color/white"
+        zsg:show_bottomline="false"
+        zsg:show_leftimg="@drawable/setting"
+        zsg:show_text="系统设置" />
+
+    <com.sunofbeaches.mainlooper.item_view
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        zsg:show_bottomline="true"
+        zsg:show_leftimg="@drawable/update"
+        zsg:show_text="版本更新" />
+
+    <com.sunofbeaches.mainlooper.item_view
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:background="@color/white"
+        zsg:show_bottomline="true"
+        zsg:show_leftimg="@drawable/about"
+        zsg:show_text="投诉建议" />
+    <com.sunofbeaches.mainlooper.item_view
+        android:id="@+id/send_to_Friend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:background="@color/white"
+        zsg:show_bottomline="false"
+        zsg:show_leftimg="@drawable/recommend"
+        zsg:show_text="推荐给好友" />
+    <LinearLayout
+        android:layout_marginTop="45dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/border3"
+        android:layout_weight="1"
+        >
+        <LinearLayout
+            android:layout_marginTop="4dp"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            >
+            <ImageButton
+                android:id="@+id/home2"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:src="@mipmap/home"
+                android:scaleType="centerInside"
+                android:background="#ffffff"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home"
+                android:layout_gravity="center_horizontal"
+                android:textSize="10sp"
+                android:textColor="#000000"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="4dp"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            >
+
+            <ImageButton
+                android:id="@+id/receive"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:background="#ffffff"
+                android:scaleType="centerInside"
+                android:src="@mipmap/receiveall" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/receive"
+                android:layout_gravity="center_horizontal"
+                android:textSize="10sp"
+                android:textColor="#000000"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="4dp"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            >
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:src="@mipmap/send"
+                android:scaleType="centerInside"
+                android:background="#ffffff"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/send"
+                android:layout_gravity="center_horizontal"
+                android:textSize="10sp"
+                android:textColor="#000000"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="4dp"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            >
+            <ImageButton
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:src="@mipmap/center2"
+                android:scaleType="centerInside"
+                android:background="#ffffff"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/center"
+                android:layout_gravity="center_horizontal"
+                android:textSize="10sp"
+                android:textColor="#000000"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

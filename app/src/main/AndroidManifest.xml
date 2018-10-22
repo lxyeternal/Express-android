@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sunofbeaches.mainlooper">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.sunofbeaches.mainlooper.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.imooc.searchResult.SearchActivity">
+
+        </activity>
+
+        <!--主界面-->
+        <activity android:name="com.sunofbeaches.mainlooper.MainActivity">
+
+        </activity>
+        <activity android:name="com.yyw.receiveResult.ReceiveActivity">
+
+        </activity>
+
+        <!--引导页面-->
+        <activity android:name="com.sunofbeaches.mainlooper.GuideActivity"/>
+
+        <!--注册页面-->
+        <activity android:name="com.sunofbeaches.mainlooper.LoginActivity"/>
+
+
+
+        <!--忘记密码-->
+        <activity android:name="com.sunofbeaches.mainlooper.ForgetPasswordActivity"/>
+
+        <!--禁忌物品查询-->
+
+        <activity android:name=".Prohibit_page">
+
+        </activity>
+
+        <!--寄件页面-->
+        <activity android:name=".Sendpackage">
+
+        </activity>
+
+
+        <activity android:name="com.sunofbeaches.mainlooper.RegisteredActivity"/>
+        <activity android:name="com.imooc.searchResult.ScanActivity">
+
+        </activity>
+        <activity android:name="com.sunofbeaches.mainlooper.CenterActivity">
+
+        </activity>
+    </application>
+
+</manifest>

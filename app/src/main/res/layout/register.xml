@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="0dp"
+    android:background="@color/white">
+
+
+    <TextView
+        android:background="@color/whitesmoke"
+        android:layout_marginBottom="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:textSize="24dp"
+        android:text="@string/app_name"
+        android:textColor="@color/black"/>
+
+
+    <EditText
+        android:layout_marginBottom="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:id="@+id/et_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/text_user_name"
+        android:textColorHint="@color/gray"
+        android:paddingLeft="20dp"
+        android:background="@color/whitesmoke"/>
+
+
+    <EditText
+        android:layout_marginBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:id="@+id/et_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/text_ages"
+        android:textColorHint="@color/gray"
+        android:background="@color/whitesmoke"/>
+
+    <EditText
+        android:textColorHint="@color/gray"
+        android:paddingLeft="20dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/whitesmoke"
+        android:id="@+id/et_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/text_desc"
+        android:lines="2"/>
+
+    <RadioGroup
+        android:background="@color/whitesmoke"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/mRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp">
+
+        <RadioButton
+            android:id="@+id/rb_boy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/text_boy"
+            android:textColor="@color/black"/>
+
+        <RadioButton
+            android:id="@+id/rb_girl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="@string/text_girl"
+            android:textColor="@color/black"/>
+
+    </RadioGroup>
+
+
+    <EditText
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="20dp"
+        android:textColorHint="@color/gray"
+        android:layout_marginBottom="10dp"
+        android:background="@color/whitesmoke"
+        android:id="@+id/et_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/text_password"
+        android:inputType="textPassword"/>
+
+    <EditText
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textColorHint="@color/gray"
+        android:paddingLeft="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/whitesmoke"
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/text_password_again"
+        android:inputType="textPassword"/>
+
+    <EditText
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textColorHint="@color/gray"
+        android:paddingLeft="20dp"
+        android:background="@color/whitesmoke"
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/text_email"/>
+
+    <TextView
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_register_remind"
+        android:textColor="@color/colorAccent"
+        android:textSize="15sp"
+        android:inputType="textEmailAddress"/>
+
+
+    <Button
+        android:id="@+id/btnRegistered"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_bg"
+        android:text="@string/text_registered"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>

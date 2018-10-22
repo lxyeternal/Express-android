@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+        <TableRow android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/prohabit_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/getback_rightwhite" />
+
+            <TextView
+                android:paddingBottom="5dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/prohibit_object"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+
+        </TableRow>
+
+
+    </TableLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="633dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/whitesmoke">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="10dp"
+            android:text="1. 各类武器、弹药。如枪支、子弹、炮弹、手榴弹、地雷、炸弹等。
+
+2. 各类易爆炸性物品。如雷管、炸药、火药、鞭炮等。
+
+3. 各类易燃烧性物品,包括液体、气体和固体。如汽油、煤油、桐油、酒精、生漆、柴油、
+
+4. 气雾剂、 气体打火机、瓦斯气瓶、磷、硫磺、火柴等。
+
+5. 各类易腐蚀性物品。如火硫酸、盐酸、硝酸、有机溶剂、农药、双氧水、危险化学品等。
+
+6. 各类放射性元素及容器。如铀、钴、镭、钚等。
+
+7. 各类烈性毒药。如铊、氰化物、砒霜等。
+
+8. 各类麻醉药物。如鸦片(包括罂粟壳、花、苞、叶) 、吗啡、可卡因、海洛因、大麻、冰 毒、 9. 麻黄素及
+
+10. 其它制品等。
+
+11. 各类生化制品和传染性物品。如炭疽、危险性病菌、医药用废弃物等。
+
+12. 各种危害国家安全和社会政治稳定以及淫秽的出版物、宣传品、印刷品等。
+
+13. 各种妨害公共卫生的物品。如尸骨、动物器官、肢体、未经硝制的兽皮、未经药制的兽 骨等。
+
+14. 国家法律、法规、行政规章明令禁止流通、寄递或进出境的物品,如国家秘密文件和资 料、国家货币 伪造的货币和有价证券、仿真武器、管制刀具、珍贵文物、濒危野生动物及 其制品等。
+
+15. 包装不妥,可能危害人身安全、污染或者损毁其他寄递件、设备的物品等。
+
+16. 各寄达国(地区)禁止寄递进口的物品等。
+
+17. 其他禁止寄递的物品。"
+            android:textColor="@color/black"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="kdcompany">
+        <item>申通</item>
+        <item>EMS</item>
+        <item>顺丰</item>
+        <item>圆通</item>
+        <item>中通</item>
+        <item>韵达</item>
+        <item>天天</item>
+        <item>汇通</item>
+        <item>全峰</item>
+        <item>德邦</item>
+        <item>宅急送</item>
+    </string-array>
+</resources>
