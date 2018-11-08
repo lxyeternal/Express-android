@@ -1,7 +1,5 @@
 package com.sunofbeaches.mainlooper;
 
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -11,6 +9,9 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
+import cn.bmob.v3.Bmob;
 
 public class RegisteredActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -29,6 +30,8 @@ public class RegisteredActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register);
+        Bmob.initialize(this, "7b3a5fc79f45330c4eabb8d0ad823b89");
+
         initView();
     }
 
@@ -46,7 +49,6 @@ public class RegisteredActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onClick(View v) {
-
         switch (v.getId()) {
             case R.id.btnRegistered:
                 //获取到输入框的值
@@ -78,24 +80,39 @@ public class RegisteredActivity extends AppCompatActivity implements View.OnClic
                             }
                         });
 
-
                         //判断简介是否为空
                         if (TextUtils.isEmpty(desc)) {
                             desc = getString(R.string.text_nothing);
                         }
 
-                        //实现注册
+                        //注册
+                        MyUser user = new MyUser();
+                        user.setUsername(name);
+                        user.setPassword(password);
+                        user.setEmail(email);
+                        user.setAge(Integer.parseInt(age));
+                        user.setSex(isGender);
+                        user.setDesc(desc);
 
+                        user.signUp(new SaveListener<MyUser>() {
+                            @Override
+                            public void done(MyUser myUser, BmobException e) {
+                                if(e==null){
+                                    Toast.makeText(RegisteredActivity.this, R.string.text_registered_successful, Toast.LENGTH_SHORT).show();
+                                    finish();
+                                }else{
+                                    Toast.makeText(RegisteredActivity.this, getString(R.string.text_registered_failure) + e.toString(), Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                    } else {
+                        Toast.makeText(this, R.string.text_two_input_not_consistent, Toast.LENGTH_SHORT).show();
                     }
-                    else {
-                        Toast.makeText(this, getString(R.string.text_two_input_not_consistent), Toast.LENGTH_SHORT).show();
-                    }
-                }else {
+                } else {
                     Toast.makeText(this, getString(R.string.text_tost_empty), Toast.LENGTH_SHORT).show();
                 }
-                startActivity(new Intent(this, LoginActivity.class));
 
+                break;
         }
     }
 }
-

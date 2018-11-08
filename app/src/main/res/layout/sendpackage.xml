@@ -1,35 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/whitesmoke">
 
     <TableLayout
-        android:background="@drawable/bottomframeboder"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bottomframeboder">
 
-        <TableRow android:layout_height="match_parent">
+        <TableRow android:layout_height="61dp">
 
             <ImageButton
                 android:id="@+id/getback"
                 android:layout_width="35dp"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="4dp"
                 android:background="@drawable/getback_left" />
 
             <TextView
-                android:paddingTop="5dp"
                 android:layout_height="35dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="45dp"
+                android:layout_marginLeft="65dp"
                 android:layout_marginTop="3dp"
+                android:paddingTop="5dp"
                 android:text="@string/send"
                 android:textColor="@color/black"
-                android:textSize="20dp" />
+                android:textSize="24dp" />
 
         </TableRow>
     </TableLayout>
@@ -37,84 +40,93 @@
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="79dp">
 
         <TableRow
             android:id="@+id/choose_company"
-            android:orientation="horizontal"
-            android:background="@color/white">
+            android:background="@color/white"
+            android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="52dp"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="2dp"
-                android:background="@drawable/company_main"
-                android:layout_marginLeft="20dp"/>
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/company_main" />
+
             <EditText
+                android:layout_marginTop="5dp"
                 android:text="@string/choose_company"
-                android:layout_marginTop="5dp"
                 android:textColor="@color/gray"
-                android:textSize="16dp"/>
+                android:textSize="16dp" />
+
             <ImageButton
-                android:background="@drawable/getback_right"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="75dp"
                 android:layout_width="35dp"
-                android:layout_height="35dp"/>
+                android:layout_height="35dp"
+                android:layout_marginLeft="115dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/getback_right" />
 
         </TableRow>
 
         <TableRow
             android:id="@+id/shoujianren_information"
-            android:background="@color/white"
             android:layout_marginTop="20dp"
+            android:background="@color/white"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="20dp"
                 android:layout_width="20dp"
                 android:layout_height="25dp"
                 android:layout_marginBottom="2dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/jijian1" />
+
             <EditText
+                android:layout_marginTop="5dp"
                 android:text="@string/shoujianren_information"
-                android:layout_marginTop="5dp"
                 android:textColor="@color/gray"
-                android:textSize="16dp"/>
+                android:textSize="16dp" />
+
             <ImageButton
-                android:background="@drawable/getback_right"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="75dp"
                 android:layout_width="35dp"
-                android:layout_height="35dp"/>
+                android:layout_height="35dp"
+                android:layout_marginLeft="115dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/getback_right" />
 
         </TableRow>
 
         <TableRow
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@color/white"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content">
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="25dp"
-                android:textSize="16dp"
+                android:layout_marginTop="10dp"
                 android:text="@string/object"
-                android:textColor="@color/gray"/>
+                android:textColor="@color/gray"
+                android:textSize="16dp" />
+
             <TextView
-                android:textSize="16dp"
-                android:textColor="@color/black"
                 android:layout_gravity="center"
-                android:text="文件  1.0kg"/>
+                android:text="文件  1.0kg"
+                android:textColor="@color/black"
+                android:textSize="16dp" />
+
             <ImageButton
-                android:background="@drawable/getback_right"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="75dp"
                 android:layout_width="35dp"
-                android:layout_height="35dp"/>
+                android:layout_height="35dp"
+                android:layout_marginLeft="115dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/getback_right" />
 
         </TableRow>
     </TableLayout>
@@ -122,36 +134,41 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="232dp"
         android:background="@color/white">
 
         <TableRow>
+
             <TextView
+                android:layout_marginLeft="68dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
                 android:text="@string/jijian_menthod"
                 android:textColor="@color/gray"
-                android:textSize="16dp"
-                android:layout_marginLeft="68dp"
-                android:gravity="center"
-                android:layout_marginTop="10dp"/>
+                android:textSize="16dp" />
+
             <TextView
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
                 android:text="@string/kuaidiyuan_shoujian"
                 android:textColor="@color/black"
-                android:textSize="16dp"
-                android:layout_marginLeft="60dp"
-                android:gravity="center"
-                android:layout_marginTop="10dp"/>
+                android:textSize="16dp" />
 
         </TableRow>
 
         <TableRow
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
             <ImageButton
                 android:id="@+id/id_leavemessage"
-                android:background="@drawable/kuaidiyuan"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginLeft="80dp"/>
+                android:layout_marginLeft="80dp"
+                android:background="@drawable/kuaidiyuan" />
 
             <ImageButton
                 android:layout_width="51dp"
@@ -163,21 +180,21 @@
         </TableRow>
 
         <TableRow
-            android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp">
+            android:orientation="horizontal">
 
             <TextView
+                android:layout_marginLeft="80dp"
                 android:text="@string/message_remark"
-                android:textSize="16dp"
                 android:textColor="@color/gray"
-                android:layout_marginLeft="80dp"/>
+                android:textSize="16dp" />
 
             <TextView
+                android:layout_marginLeft="85dp"
                 android:text="@string/yuyue_jijian"
                 android:textColor="@color/gray"
-                android:textSize="16dp"
-                android:layout_marginLeft="85dp"/>
+                android:textSize="16dp" />
 
         </TableRow>
 
@@ -186,11 +203,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="272dp"
+            android:layout_width="305dp"
             android:layout_height="match_parent"
             android:background="@color/gray_cc"
             android:gravity="center"
@@ -198,12 +216,12 @@
             android:textSize="16dp" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginRight="0dp"
+            android:layout_marginLeft="0dp"
             android:background="#FF589983"
             android:text="@string/upload" />
 
 
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>

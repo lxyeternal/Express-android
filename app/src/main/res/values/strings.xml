@@ -13,6 +13,8 @@
         <string name="select">快递选择</string>
         <string name="web">网点查询</string>
         <string name="leavemessage">寄件留言</string>
+        <string name="text_registered_failure">注册失败：</string>
+        <string name="text_registered_successful">注册成功</string>
         <string name="home">首页</string>
         <string name="center">个人中心</string>
         <string name="input_your_courier_number">请输入快递单号</string>
