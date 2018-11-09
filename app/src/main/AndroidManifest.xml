@@ -33,7 +33,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.sunofbeaches.mainlooper.SplashActivity">
+        <activity android:name="com.sunofbeaches.List.Sendpackage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -70,9 +70,9 @@
         </activity>
 
         <!--寄件页面-->
-        <activity android:name=".Sendpackage">
+        <!--<activity android:name="com.sunofbeaches.List.Sendpackage">-->
 
-        </activity>
+        <!--</activity>-->
 
 
         <activity android:name="com.sunofbeaches.mainlooper.RegisteredActivity"/>

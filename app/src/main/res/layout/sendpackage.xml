@@ -57,8 +57,10 @@
                 android:layout_marginLeft="20dp"
                 android:background="@drawable/company_main" />
 
-            <EditText
-                android:layout_marginTop="5dp"
+            <TextView
+                android:id="@+id/choose_company_edit"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="4dp"
                 android:text="@string/choose_company"
                 android:textColor="@color/gray"
                 android:textSize="16dp" />
@@ -199,6 +201,25 @@
         </TableRow>
 
     </TableLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <FrameLayout
+            android:id="@+id/content_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:clickable="true">
+
+        </FrameLayout>
+
+
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

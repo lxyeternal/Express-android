@@ -16,16 +16,16 @@
         android:layout_height="97dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="67dp"
+        android:layout_marginTop="37dp"
         android:src="@drawable/plane" />
 
     <EditText
         android:id="@+id/et_name"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="231dp"
+        android:layout_marginTop="193dp"
         android:background="@drawable/editview"
         android:hint="@string/text_user_name"
         android:paddingLeft="10dp"
@@ -36,7 +36,8 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="266dp"
         android:background="@drawable/editview"
         android:hint="密码"
         android:inputType="numberPassword"
@@ -66,8 +67,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="173dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="220dp"
         android:background="@drawable/button_bg"
         android:text="@string/text_login"
         android:textColor="@android:color/white" />
@@ -77,8 +78,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="110dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="149dp"
         android:background="@drawable/button_bg"
         android:text="@string/text_registered"
         android:textColor="@android:color/white" />
@@ -88,7 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="88dp"
+        android:layout_marginBottom="133dp"
         android:orientation="vertical">
 
         <TextView
