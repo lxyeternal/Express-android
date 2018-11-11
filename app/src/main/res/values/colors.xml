@@ -1,5 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <color name="dialog_title_text"> #ffb71c </color>
+
+
+    <color name="divider">#E5E5E5</color>
+    <color name="shadow">#AAEBEBEB</color>
+    <color name="common_bg">#FAFAFA</color>
+    <color name="content_bg">#F3F3F3</color>
+    <color name="alpha_gray">#CC646464</color>
+    <color name="theme_gray">#646464</color>
+    <color name="gray_deep">#5c5c5c</color>
+    <color name="sc_lightgreen">#47d0ad</color>
+    <color name="sc_bg_first">#00ffffff</color>
+    <color name="sc_deepgreen">#396e20</color>
+    <color name="sc_white">#ffffff</color>
+    <color name="sc_black_pure">#000000</color>
+    <color name="sc_black">#303030</color>
+    <color name="alice_blue">#F0F8FF</color><!--艾利斯兰 -->
+    <color name="sc_lightgray">#E9E9E9</color>
+    <color name="sc_deepgray">#606060</color>
+    <color name="sc_thingray">#afafaf</color>
+    <color name="sc_thin_gray">#1b2126</color>
+    <color name="sc_small_gray">#999999</color>
+    <color name="sc_gray">#8c8c8c</color>
+    <color name="sc_red">#ff0000</color>
+    <color name="sc_pink">#2fb9c3</color>
+    <color name="sc_blue">#007aff</color>
+    <color name="sc_theme">#333333</color>
+    <color name="sc_search_text">#8c8c8c</color>
+    <color name="sc_indicator">#2fb9c3</color>
+    <color name="sc_ticket_indicator">#fb3d42</color>
+    <color name="bg_pagebase">#edecec</color>
+    <color name="bg_pagebase_shadow">#aa000000</color>
+    <color name="bg_shadow">#aa000000</color>
+    <color name="bg_recycle">#777777</color>
+    <color name="bg_image">#efefef</color>
+    <color name="bg_image_line">#e0e0e0</color>
+    <color name="sc_thin_small">#808080</color>
+    <color name="sc_thinblue">#27aaf0</color>
+    <color name="sc_weight_pink">#ed4f4f</color>
+    <color name="sc_hot_text">#737373</color>
+    <color name="sc_bg_search">#cdcdcd</color>
+    <color name="sc_bg_home_text_one">#19b5fe</color>
+    <color name="sc_bg_home_text_two">#ffc952</color>
+    <color name="sc_bg_home_text_three">#ff7473</color>
+    <color name="sc_bg_home_text_four">#eeeeee</color>
+    <color name="bg_tv_point">#4ce4ff</color>
+    <color name="tv_good_price">#fe4365</color>
+    <color name="tv_all_goods">#cccccc</color>
+    <color name="tv_all_goods_price">#f22613</color>
+    <color name="bg_transparent">#00000000</color>
+    <color name="bg_translucent">#aa999999</color>
+    <color name="sc_ticket_red">#fe3a3a</color>
+    <color name="sc_ticket_orange">#ffb71c</color>
+    <color name="sc_ticket_blue">#22a7f0</color>
+    <color name="sc_gray_shadow">#aa1b2126</color>
+
+    <color name="bg_pink">@color/sc_pink</color>
+
+    <color name="bg_item_normal">@color/sc_white</color>
+    <color name="bg_item_pressed">#efefef</color>
+    <color name="bg_uniformcard">@color/sc_white</color>
+    <color name="bg_cardbtn_normal">@color/sc_white</color>
+    <color name="bg_cardbtn_pressed">@color/bg_pagebase</color>
+    <color name="bg_sub_recommend">#f7f7f7</color>
+
+    <color name="text_black">@color/sc_black</color>
+    <color name="text_thin_gray">@color/sc_thin_gray</color>
+    <color name="text_small_gray">@color/sc_small_gray</color>
+    <color name="text_thingray">@color/sc_thingray</color>
+    <color name="text_gray">@color/sc_gray</color>
+    <color name="text_deepgray">@color/sc_deepgray</color>
+    <color name="text_white">@color/sc_white</color>
+    <color name="text_pink">#ed4f4f</color>
+    <color name="text_sub">#666666</color>
+    <color name="text_sub_theme">@color/sc_theme</color>
+    <color name="text_sub_recommend">#808080</color>
+    <color name="text_comment_name">#19b5fe</color>
+    <color name="text_comment_content">#666666</color>
+    <color name="text_sub_bar">#ffd948</color>
+    <color name="text_sub_attention">#f89406</color>
+
     <color name="transparent">#00000000</color><!--透明色 -->
     <color name="white">#FFFFFF</color><!--白色 -->
     <color name="ivory">#FFFFF0</color><!--象牙色 -->

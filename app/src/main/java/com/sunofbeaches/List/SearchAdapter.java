@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+
 import com.sunofbeaches.mainlooper.R;
 
 import java.util.List;
@@ -114,6 +115,7 @@ public class SearchAdapter extends Madapter {
         TextView code;
         LinearLayout employeesquery;
     }
+
 
     @Override
     public void setSelectColor(int selectColor) {

@@ -10,7 +10,6 @@ import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
-import com.sunofbeaches.List.Madapter;
 import com.sunofbeaches.mainlooper.R;
 
 /**
