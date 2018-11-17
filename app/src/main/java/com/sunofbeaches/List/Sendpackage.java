@@ -1,11 +1,10 @@
 package com.sunofbeaches.List;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -17,12 +16,17 @@ import com.Tools.callback.SelectAddressInterface;
 import com.Tools.view.AddressDialog;
 import com.Tools.view.AddressSelectorDialog;
 import com.Tools.view.SettingItemView;
+import com.sunofbeaches.entity.Address;
+import com.sunofbeaches.mainlooper.ForgetPasswordActivity;
 import com.sunofbeaches.mainlooper.MainActivity;
 import com.sunofbeaches.mainlooper.R;
 
 
 import java.util.ArrayList;
 import java.util.List;
+
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
 
 public class Sendpackage extends AppCompatActivity implements View.OnClickListener,SelectAddressInterface {
 
@@ -45,6 +49,10 @@ public class Sendpackage extends AppCompatActivity implements View.OnClickListen
     EditText mDetailsAddress;
     EditText mPostcode;
     EditText mPhoneNum;
+
+    public String CurrentProvinceName;
+    public String CurrentCityName;
+    public String CurrentDistrictName;
 
     private AddressSelectorDialog addressSelectorDialog;
 
@@ -121,6 +129,9 @@ public class Sendpackage extends AppCompatActivity implements View.OnClickListen
                 mSivAddress.setItemTip(currentProvinceName + currentCityName + currentDistrictName);
                 mPostcode.setText(currentZipCode);
                 addressSelectorDialog.dismiss();
+                CurrentProvinceName = currentProvinceName;
+                CurrentCityName = currentCityName;
+                CurrentDistrictName = currentDistrictName;
             }
         });
     }
@@ -169,15 +180,14 @@ public class Sendpackage extends AppCompatActivity implements View.OnClickListen
         objectAdapter = new SearchAdapter(this);
         List<Dic> objectResult = new ArrayList<>();
         objectResult.add(new Dic("000","全部"));
-        objectResult.add(new Dic("001","顺丰"));
-        objectResult.add(new Dic("002","天天"));
-        objectResult.add(new Dic("003","圆通"));  //objectAdapter
-        objectResult.add(new Dic("004","申通"));
-        objectResult.add(new Dic("005","韵达"));
-        objectResult.add(new Dic("006","百世"));
-        objectResult.add(new Dic("007","中通"));
-        objectResult.add(new Dic("008","国通"));
-        objectResult.add(new Dic("008","宅急送"));
+        objectResult.add(new Dic("001","文件"));
+        objectResult.add(new Dic("002","食品"));
+        objectResult.add(new Dic("003","电子"));  //objectAdapter
+        objectResult.add(new Dic("004","液体"));
+        objectResult.add(new Dic("005","书籍"));
+        objectResult.add(new Dic("006","衣服"));
+        objectResult.add(new Dic("007","金属"));
+        objectResult.add(new Dic("008","药品"));
 
         objectAdapter.setItems(objectResult);
 
@@ -205,22 +215,67 @@ public class Sendpackage extends AppCompatActivity implements View.OnClickListen
             case R.id.getback:
                 startActivity(new Intent(this, MainActivity.class));
                 break;
-            case R.id.id_leavemessage:
-                AlertDialog.Builder dialog = new AlertDialog.Builder(Sendpackage.this);
-                dialog.setTitle("标题");
-                dialog.setMessage("具体信息");
-                dialog.setCancelable(false);
-                dialog.setPositiveButton("继续", new DialogInterface.OnClickListener() {
+//            case R.id.id_leavemessage:
+//                AlertDialog.Builder dialog = new AlertDialog.Builder(Sendpackage.this);
+//                dialog.setTitle("标题");
+//                dialog.setMessage("具体信息");
+//                dialog.setCancelable(false);
+//                dialog.setPositiveButton("继续", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//                    }
+//                });
+//                dialog.setNegativeButton("退出", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//                    }
+//                });
+//                dialog.show();
+//                break;
+            case R.id.ack_information:
+
+                //获取输入框中的信息
+
+                String expresscompany = mcompany.getText().toString().trim();
+                String recv_name = mConsignee.getText().toString().trim();
+                String phonenuber = mPhoneNum.getText().toString().trim();
+                String currentZipCode = mPostcode.getText().toString().trim();
+                String project = object_jijian_text.getText().toString().trim();
+                String detailsaddress = mDetailsAddress.getText().toString().trim();
+
+                //Integer.parseInt
+
+                //上传地址信息
+
+                Address address = new Address();
+
+                address.setCurrentCityName(CurrentCityName);
+                address.setCurrentProvinceName(CurrentProvinceName);
+                address.setCurrentDistrictName(CurrentDistrictName);
+                address.setCurrentZipCode(Integer.parseInt(currentZipCode));
+                address.setExpresscompany(expresscompany);
+                address.setPhonenuber(Integer.parseInt(phonenuber));
+                address.setProject(project);
+                address.setRecv_name(recv_name);
+                address.setDetailsaddress(detailsaddress);
+
+                address.save(new SaveListener<String>() {
+
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
+                    public void done(String objectId, BmobException e) {
+                        if(e==null){
+                            toast("创建数据成功：" + objectId);
+                        }else{
+                            Log.i("bmob","失败："+e.getMessage()+","+e.getErrorCode());
+                        }
+                    }
+
+                    private void toast(String s) {
                     }
                 });
-                dialog.setNegativeButton("退出", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                    }
-                });
-                dialog.show();
+
+                break;
+
         }
     }
 

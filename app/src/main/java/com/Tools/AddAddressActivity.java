@@ -13,6 +13,8 @@ import com.Tools.view.AddressDialog;
 import com.Tools.view.AddressSelectorDialog;
 import com.Tools.view.SettingItemView;
 import com.Tools.callback.SelectAddressInterface;
+import com.sunofbeaches.entity.Address;
+import com.sunofbeaches.mainlooper.ForgetPasswordActivity;
 import com.sunofbeaches.mainlooper.R;
 
 
@@ -24,6 +26,8 @@ public class AddAddressActivity extends AppCompatActivity implements SelectAddre
     EditText mDetailsAddress;
     EditText mPostcode;
     EditText mPhoneNum;
+
+
 
     private AddressSelectorDialog addressSelectorDialog;
 
@@ -110,8 +114,7 @@ public class AddAddressActivity extends AppCompatActivity implements SelectAddre
     public void onClick(View v) {
         switch (v.getId())
         {
-//            case R.id.ack_information:
-//                startActivity(new InstantiationError);
+
         }
     }
 }

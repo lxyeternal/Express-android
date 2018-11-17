@@ -47,8 +47,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_below="@+id/et_password"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="6dp"
         android:orientation="vertical">
 
         <CheckBox
@@ -66,9 +68,10 @@
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="220dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="200dp"
         android:background="@drawable/button_bg"
         android:text="@string/text_login"
         android:textColor="@android:color/white" />
@@ -77,9 +80,10 @@
         android:id="@+id/btn_registered"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="149dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="138dp"
         android:background="@drawable/button_bg"
         android:text="@string/text_registered"
         android:textColor="@android:color/white" />
@@ -89,8 +93,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="125dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="110dp"
         android:orientation="vertical">
 
         <TextView
