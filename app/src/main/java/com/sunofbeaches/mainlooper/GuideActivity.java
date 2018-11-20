@@ -107,6 +107,7 @@ public class GuideActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // 按钮一旦被点击，更新 SharedPreferences
+                v.getBackground().setAlpha(50);
                 PrefUtils.setBoolean(GuideActivity.this, PrefUtils.GUIDE_SHOWED, true);
                 // 跳转到主页面
                 startActivity(new Intent(GuideActivity.this, LoginActivity.class));

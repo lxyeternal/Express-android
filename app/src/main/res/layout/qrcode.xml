@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="235dp"
+        android:layout_height="213dp"
+        android:layout_gravity="center_horizontal"
+        app:srcCompat="@android:color/background_light" />
+
+    <TextView
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:ems="10"
+        android:gravity="center|left"
+        android:hint="输入快递信息"
+        android:inputType="textMultiLine"
+        android:maxLines="10" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="生成二维码"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="添加图标"
+        android:textSize="18sp" />
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="省级测试"
+        android:textSize="18sp" />
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="县级测试"
+        android:textSize="18sp" />
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="具体地址测试"
+        android:textSize="18sp" />
+</LinearLayout>

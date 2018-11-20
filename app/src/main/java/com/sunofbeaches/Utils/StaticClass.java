@@ -10,7 +10,7 @@ public class StaticClass {
     public static final String SHARE_IS_FIRST = "isFirst";
 
     //Bmob key
-    public static final String BMOB_APP_ID = "7b3a5fc79f45330c4eabb8d0ad823b89";
+    public static final String BMOB_APP_ID = "27a2563509e7fbb280ee0bab60c998ce";
 
     //快递Key
     public static final String COURIER_KEY = "1af43b4fd1c9ecf97493233f6769b749";

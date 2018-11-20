@@ -75,7 +75,7 @@
                     android:paddingLeft="16dp"
                     android:text="@string/choose_company"
                     android:textColor="@color/gray"
-                    android:textSize="18dp" />
+                    android:textSize="16dp" />
 
 
                 <LinearLayout
@@ -121,7 +121,7 @@
                 android:layout_height="wrap_content"
                 android:text="收货人"
                 android:textColor="#333333"
-                android:textSize="18dp" />
+                android:textSize="16dp" />
 
             <EditText
                 android:id="@+id/consignee"
@@ -132,7 +132,7 @@
                 android:hint="@string/address_name"
                 android:singleLine="true"
                 android:textColorHint="@color/gray"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <View
@@ -230,7 +230,7 @@
                 android:layout_height="wrap_content"
                 android:text="联系电话"
                 android:textColor="#333333"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/phoneNum"
@@ -238,7 +238,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:background="@null"
-                android:inputType="number"
+                android:inputType="phone"
                 android:maxLength="12"
                 android:singleLine="true"
                 android:textColorHint="@color/gray" />
@@ -262,7 +262,7 @@
                 android:layout_marginBottom="10dp"
                 android:text="@string/object"
                 android:textColor="@color/black"
-                android:textSize="18dp" />
+                android:textSize="16dp" />
 
             <TextView
                 android:id="@+id/object_jijian_text"
@@ -270,7 +270,7 @@
                 android:layout_gravity="center"
                 android:text="文件 "
                 android:textColor="@color/black"
-                android:textSize="18dp" />
+                android:textSize="16dp" />
 
         </TableRow>
 

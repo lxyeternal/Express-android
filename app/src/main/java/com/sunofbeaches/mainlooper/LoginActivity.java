@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
@@ -32,7 +33,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
-        Bmob.initialize(this, "7b3a5fc79f45330c4eabb8d0ad823b89");
+        Bmob.initialize(this, "27a2563509e7fbb280ee0bab60c998ce");
         initView();
     }
 
@@ -70,7 +71,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(new Intent(this, RegisteredActivity.class));
                 break;
             case R.id.btnLogin:
-                startActivity(new Intent(this,MainActivity.class));
+//                startActivity(new Intent(this,MainActivity.class));
                 //1.获取输入框的值
                 String name = et_name.getText().toString().trim();
                 String password = et_password.getText().toString().trim();

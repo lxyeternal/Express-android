@@ -1,7 +1,6 @@
 package com.sunofbeaches.entity;
 
 import cn.bmob.v3.BmobObject;
-import cn.bmob.v3.listener.SaveListener;
 
 public class Address extends BmobObject {
 
@@ -9,11 +8,14 @@ public class Address extends BmobObject {
     public String currentCityName;
     public String currentDistrictName;
     public String recv_name;
-    public int phonenuber;
+    public Long phonenuber;
     public int currentZipCode;
     public String project;
     public String expresscompany;
     public String detailsaddress;
+    public String sendname;
+    public String expressnumber;
+    public boolean active;
 
     public String getCurrentProvinceName()
     {
@@ -28,7 +30,7 @@ public class Address extends BmobObject {
         return currentZipCode;
     }
 
-    public int getPhonenuber() {
+    public Long getPhonenuber() {
         return phonenuber;
     }
 
@@ -52,6 +54,15 @@ public class Address extends BmobObject {
         return recv_name;
     }
 
+    public String getExpressnumber()
+    {
+        return expressnumber;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
     public void setCurrentCityName(String currentCityName) {
         this.currentCityName = currentCityName;
     }
@@ -68,7 +79,7 @@ public class Address extends BmobObject {
         this.currentZipCode = currentZipCode;
     }
 
-    public void setPhonenuber(int phonenuber) {
+    public void setPhonenuber(Long phonenuber) {
         this.phonenuber = phonenuber;
     }
 
@@ -88,4 +99,15 @@ public class Address extends BmobObject {
         this.detailsaddress = detailsaddress;
     }
 
+    public void setSendname(String sendname) {
+        this.sendname = sendname;
+    }
+
+    public void setExpressnumber(String expressnumber) {
+        this.expressnumber = expressnumber;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
 }

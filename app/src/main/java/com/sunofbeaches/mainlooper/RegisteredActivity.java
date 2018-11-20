@@ -30,7 +30,7 @@ public class RegisteredActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register);
-        Bmob.initialize(this, "7b3a5fc79f45330c4eabb8d0ad823b89");
+        Bmob.initialize(this, "27a2563509e7fbb280ee0bab60c998ce");
 
         initView();
     }

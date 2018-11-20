@@ -188,46 +188,47 @@
             android:layout_marginLeft="55dp"
             android:background="@color/white"/>
     </LinearLayout>
+
     <LinearLayout
-        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@drawable/border3"
+        android:layout_height="59dp"
+        android:layout_marginTop="50dp"
         android:layout_weight="1"
-        >
+        android:background="@drawable/border3"
+        android:orientation="horizontal">
+
         <LinearLayout
-            android:layout_marginTop="4dp"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:orientation="vertical"
-            android:layout_weight="1"
             android:layout_gravity="center_vertical"
-            >
+            android:layout_marginTop="4dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
             <ImageButton
                 android:id="@+id/imagebtn2"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
-                android:src="@mipmap/home"
+                android:background="#ffffff"
                 android:scaleType="centerInside"
-                android:background="#ffffff"/>
+                android:src="@mipmap/home" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/home"
                 android:layout_gravity="center_horizontal"
-                android:textSize="10sp"
-                android:textColor="#000000"/>
+                android:text="@string/home"
+                android:textColor="#000000"
+                android:textSize="10sp" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="4dp"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:orientation="vertical"
-            android:layout_weight="1"
             android:layout_gravity="center_vertical"
-            >
+            android:layout_marginTop="4dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <ImageButton
                 android:layout_width="match_parent"
@@ -235,61 +236,65 @@
                 android:background="#ffffff"
                 android:scaleType="centerInside"
                 android:src="@mipmap/receive2" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/receive"
                 android:layout_gravity="center_horizontal"
-                android:textSize="10sp"
-                android:textColor="#000000"/>
+                android:text="@string/receive"
+                android:textColor="#000000"
+                android:textSize="10sp" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="4dp"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:orientation="vertical"
-            android:layout_weight="1"
             android:layout_gravity="center_vertical"
-            >
+            android:layout_marginTop="4dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
             <ImageButton
+                android:id="@+id/sendpage"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
-                android:src="@mipmap/send"
+                android:background="#ffffff"
                 android:scaleType="centerInside"
-                android:background="#ffffff"/>
+                android:src="@mipmap/send" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/send"
                 android:layout_gravity="center_horizontal"
-                android:textSize="10sp"
-                android:textColor="#000000"/>
+                android:text="@string/send"
+                android:textColor="#000000"
+                android:textSize="10sp" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="4dp"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:orientation="vertical"
-            android:layout_weight="1"
             android:layout_gravity="center_vertical"
-            >
+            android:layout_marginTop="4dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
             <ImageButton
                 android:id="@+id/center2"
-                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:src="@mipmap/center"
+                android:layout_marginTop="5dp"
+                android:background="#ffffff"
                 android:scaleType="centerInside"
-                android:background="#ffffff"/>
+                android:src="@mipmap/center" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/center"
                 android:layout_gravity="center_horizontal"
-                android:textSize="10sp"
-                android:textColor="#000000"/>
+                android:text="@string/center"
+                android:textColor="#000000"
+                android:textSize="10sp" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
