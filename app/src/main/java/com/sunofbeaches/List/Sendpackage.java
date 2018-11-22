@@ -338,7 +338,7 @@ public class Sendpackage extends AppCompatActivity implements View.OnClickListen
 //                 String  encryspread = RSAUtils.encrypt(PUCLIC_KEY,spread);
                  String  encry1 = RSAUtils.encrypt(PUCLIC_KEY,"省份："+CurrentProvinceName);
                  String  encry2 = RSAUtils.encrypt(PUCLIC_KEY1,"县级："+CurrentDistrictName);
-                 String  encry3 = RSAUtils.encrypt(PUCLIC_KEY2,"具体地址：" + detailsaddress + '\n' + "联系电话：" + phonenuber);
+                 String  encry3 = RSAUtils.encrypt(PUCLIC_KEY2,"收件人："+ recv_name + '\n' + "具体地址：" + detailsaddress + '\n' + "联系电话：" + phonenuber);
                  String  encryspread = encry1 + "###" + encry2 + "###" + encry3;
 //                address.save(new SaveListener<String>() {
 //                    @Override

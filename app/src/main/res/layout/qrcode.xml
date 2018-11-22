@@ -34,22 +34,22 @@
         android:layout_height="wrap_content"
         android:text="添加图标"
         android:textSize="18sp" />
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="省级测试"
-        android:textSize="18sp" />
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="县级测试"
-        android:textSize="18sp" />
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="具体地址测试"
-        android:textSize="18sp" />
+    <!--<Button-->
+        <!--android:id="@+id/button3"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="省级测试"-->
+        <!--android:textSize="18sp" />-->
+    <!--<Button-->
+        <!--android:id="@+id/button4"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="县级测试"-->
+        <!--android:textSize="18sp" />-->
+    <!--<Button-->
+        <!--android:id="@+id/button5"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="具体地址测试"-->
+        <!--android:textSize="18sp" />-->
 </LinearLayout>

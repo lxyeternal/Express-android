@@ -27,7 +27,6 @@ import com.google.zxing.common.BitMatrix;
 import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.QRCodeReader;
 import com.google.zxing.qrcode.QRCodeWriter;
-import com.sunofbeaches.Encode.encrypt.RSAUtils;
 
 import java.util.Hashtable;
 import java.util.regex.Matcher;
@@ -91,9 +90,9 @@ public class QRcode extends Activity {
 
         Button bt1=(Button)findViewById(R.id.button1);
         Button bt2=(Button)findViewById(R.id.button2);
-        Button bt3=(Button)findViewById(R.id.button3);
-        Button bt4=(Button)findViewById(R.id.button4);
-        Button bt5=(Button)findViewById(R.id.button5);
+//        Button bt3=(Button)findViewById(R.id.button3);
+//        Button bt4=(Button)findViewById(R.id.button4);
+//        Button bt5=(Button)findViewById(R.id.button5);
 
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,39 +119,39 @@ public class QRcode extends Activity {
             }
         });
 
-        bt3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                String destring1 = string.split("###")[0];
-                String decryptStr1 =RSAUtils.decrypt(PRIVATE_KEY,destring1);
-                TextView editText=(TextView)findViewById(R.id.editText);
-                editText.setText(decryptStr1);
-            }
-        });
-
-        bt4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                String destring2 = string.split("###")[1];
-                String decryptStr2 =RSAUtils.decrypt(PRIVATE_KEY1,destring2);
-                TextView editText=(TextView)findViewById(R.id.editText);
-                editText.setText(decryptStr2);
-            }
-        });
-
-
-        bt5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                String destring3 = string.split("###")[2];
-                String decryptStr3 =RSAUtils.decrypt(PRIVATE_KEY2,destring3);
-                TextView editText=(TextView)findViewById(R.id.editText);
-                editText.setText(decryptStr3);
-            }
-        });
+//        bt3.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                String destring1 = string.split("###")[0];
+//                String decryptStr1 =RSAUtils.decrypt(PRIVATE_KEY,destring1);
+//                TextView editText=(TextView)findViewById(R.id.editText);
+//                editText.setText(decryptStr1);
+//            }
+//        });
+//
+//        bt4.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                String destring2 = string.split("###")[1];
+//                String decryptStr2 =RSAUtils.decrypt(PRIVATE_KEY1,destring2);
+//                TextView editText=(TextView)findViewById(R.id.editText);
+//                editText.setText(decryptStr2);
+//            }
+//        });
+//
+//
+//        bt5.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                String destring3 = string.split("###")[2];
+//                String decryptStr3 =RSAUtils.decrypt(PRIVATE_KEY2,destring3);
+//                TextView editText=(TextView)findViewById(R.id.editText);
+//                editText.setText(decryptStr3);
+//            }
+//        });
 
     }
 
