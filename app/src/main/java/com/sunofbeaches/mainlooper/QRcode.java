@@ -3,16 +3,21 @@ package com.sunofbeaches.mainlooper;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.sunofbeaches.Encode.hunxiao.ArrayFunctions;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.BinaryBitmap;
@@ -27,7 +32,12 @@ import com.google.zxing.common.BitMatrix;
 import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.QRCodeReader;
 import com.google.zxing.qrcode.QRCodeWriter;
+import com.sunofbeaches.Encode.hunxiao.myAlgorithms;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Hashtable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -80,6 +90,8 @@ public class QRcode extends Activity {
 
     private ImageView im1,im2;  //imageview图片
     private int w,h;        //图片宽度w,高度h
+    private Button bt3;
+    private Button bt4;
     public String string;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,18 +102,17 @@ public class QRcode extends Activity {
 
         Button bt1=(Button)findViewById(R.id.button1);
         Button bt2=(Button)findViewById(R.id.button2);
-//        Button bt3=(Button)findViewById(R.id.button3);
-//        Button bt4=(Button)findViewById(R.id.button4);
+        bt3=(Button)findViewById(R.id.button3);
+        bt4=(Button)findViewById(R.id.button4);
 //        Button bt5=(Button)findViewById(R.id.button5);
 
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = getIntent();
                 string = intent.getStringExtra("string");
-                TextView editText=(TextView)findViewById(R.id.editText);
-                editText.setText(string);
+//                TextView editText=(TextView)findViewById(R.id.editText);
+//                editText.setText(string);
                 createQRcodeImage(string);//自定义转换内容
             }
         });
@@ -112,36 +123,68 @@ public class QRcode extends Activity {
             @Override
             public void onClick(View v) {
                 im1=(ImageView)findViewById(R.id.imageView);
-                Bitmap QRbmp = ((BitmapDrawable) (im1).getDrawable()).getBitmap();   //将图片bitmap化
-                //将drawable里面的图片bitmap化
-                Bitmap logo = BitmapFactory.decodeResource(getResources(), R.drawable.head);
-                im1.setImageBitmap(addLogo(QRbmp,logo));
+//                Bitmap QRbmp = ((BitmapDrawable) (im1).getDrawable()).getBitmap();   //将图片bitmap化
+//                //将drawable里面的图片bitmap化
+//                Bitmap logo = BitmapFactory.decodeResource(getResources(), R.drawable.head);
+//                im1.setImageBitmap(addLogo(QRbmp,logo));
+                TextView tv1 = (TextView) findViewById(R.id.text1);
+                TextView tv = (TextView) findViewById(R.id.text);
+                im1.setBackgroundResource(R.drawable.testxx);
+                im1.getBackground().setAlpha(230);
+                tv1.setTypeface(Typeface.createFromAsset(getAssets(), "font.ttf"));
+                tv.setTypeface(Typeface.createFromAsset(getAssets(), "font.ttf"));
+                tv1.setText("saber");
+                tv.setText("solar");
             }
         });
 
-//        bt3.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                String destring1 = string.split("###")[0];
-//                String decryptStr1 =RSAUtils.decrypt(PRIVATE_KEY,destring1);
-//                TextView editText=(TextView)findViewById(R.id.editText);
-//                editText.setText(decryptStr1);
-//            }
-//        });
-//
-//        bt4.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                String destring2 = string.split("###")[1];
-//                String decryptStr2 =RSAUtils.decrypt(PRIVATE_KEY1,destring2);
-//                TextView editText=(TextView)findViewById(R.id.editText);
-//                editText.setText(decryptStr2);
-//            }
-//        });
-//
-//
+        im1 = (ImageView) findViewById(R.id.imageView);
+        im1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // TODO 自动生成的方法存根
+                Bitmap bitmap = activityShot(QRcode.this);
+                saveBitmapFile(bitmap);
+                Toast.makeText(QRcode.this, "图片已保存到手机Express目录下！", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        bt3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                im2=(ImageView)findViewById(R.id.imageView1);
+                if(im2.getDrawable()==null)
+                {
+                    Toast.makeText(QRcode.this, "请选择一副图片", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                else
+                {
+                    double x=0.365;
+                    encrypt(x);
+                }
+            }
+        });
+
+        bt4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                im2=(ImageView)findViewById(R.id.imageView1);
+                if(im2.getDrawable()==null)
+                {
+                    Toast.makeText(QRcode.this, "请选择一副图片", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                else
+                {
+                    double x=0.365;
+                    decrypt(x);
+                }
+            }
+        });
+
+
 //        bt5.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -155,50 +198,53 @@ public class QRcode extends Activity {
 
     }
 
-    //转换成二维码QRcode的函数。参数为一个字符串
-    public void createQRcodeImage(String url)
+    public void encrypt(double x)
     {
-        im1=(ImageView)findViewById(R.id.imageView);
-        w=im1.getWidth();
-        h=im1.getHeight();
-        try
-        {
-            //判断URL合法性
-            if (url == null || "".equals(url) || url.length() < 1)
-            {
-                return;
-            }
-            Hashtable<EncodeHintType, String> hints = new Hashtable<EncodeHintType, String>();
-            hints.put(EncodeHintType.CHARACTER_SET, "utf-8");
-            //图像数据转换，使用了矩阵转换
-            BitMatrix bitMatrix = new QRCodeWriter().encode(url, BarcodeFormat.QR_CODE, w, h, hints);
-            int[] pixels = new int[w * h];
-            //下面这里按照二维码的算法，逐个生成二维码的图片，
-            //两个for循环是图片横列扫描的结果
-            for (int y = 0; y < h; y++)
-            {
-                for (int x = 0; x < w; x++)
-                {
-                    if (bitMatrix.get(x, y))
-                    {
-                        pixels[y * w + x] = 0xff000000;
-                    }
-                    else
-                    {
-                        pixels[y * w + x] = 0xffffffff;
-                    }
-                }
-            }
-            //生成二维码图片的格式，使用ARGB_8888
-            Bitmap bitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
-            bitmap.setPixels(pixels, 0, w, 0, 0, w, h);
-            //显示到我们的ImageView上面
-            im1.setImageBitmap(bitmap);
-        }
-        catch (WriterException e)
-        {
-            e.printStackTrace();
-        }
+        //获取算法对象
+        myAlgorithms ma=new myAlgorithms();
+        ArrayFunctions af=new ArrayFunctions();
+        //获取图像像素矩阵的行数与列数
+        Bitmap bmp= ((BitmapDrawable)im2.getDrawable()).getBitmap();
+        int M=bmp.getHeight(),N=bmp.getWidth();
+
+        //获取图像像素矩阵
+        int[] pixel=new int[M*N];
+        bmp.getPixels(pixel, 0, N, 0, 0, N, M);
+        //像素矩阵转二维
+        int [][]pixels = new int[M][N];
+        af.change(pixel, pixels, M, N);
+        //进行加密
+        ma.encrypt(pixels, x, M, N);
+        //加密后矩阵降一维
+        af.recovery(pixels, pixel, M, N);
+        //生成加密后的图像
+        Bitmap bitmap = Bitmap.createBitmap(pixel, 0, N, N, M, Bitmap.Config.ARGB_8888);
+        im2.setImageBitmap(bitmap);
+
+    }
+
+    public void decrypt(double x)
+    {
+        //获取算法对象
+        myAlgorithms ma=new myAlgorithms();
+        ArrayFunctions af=new ArrayFunctions();
+        //获取图像像素矩阵的行数与列数
+        Bitmap bmp= ((BitmapDrawable)im2.getDrawable()).getBitmap();
+        int M=bmp.getHeight(),N=bmp.getWidth();
+        //获取图像像素矩阵
+        int[] pixel=new int[M*N];
+        bmp.getPixels(pixel, 0, N, 0, 0, N, M);
+        //像素矩阵转二维
+        int [][]pixels = new int[M][N];
+        af.change(pixel, pixels, M, N);
+        //进行加密
+        ma.decrypt(pixels, x, M, N);
+        //加密后矩阵降一维
+        af.recovery(pixels, pixel, M, N);
+        //生成加密后的图像
+        Bitmap bitmap = Bitmap.createBitmap(pixel, 0, N, N, M, Bitmap.Config.ARGB_8888);
+        im2.setImageBitmap(bitmap);
+
     }
 
     //识别二维码的函数
@@ -237,6 +283,132 @@ public class QRcode extends Activity {
             startActivity(intent);
         }
 
+    }
+
+
+    public static Bitmap activityShot(Activity activity) {
+        /*获取windows中最顶层的view*/
+        View view = activity.getWindow().getDecorView();
+
+        //允许当前窗口保存缓存信息
+        view.setDrawingCacheEnabled(true);
+        view.buildDrawingCache();
+
+        //获取状态栏高度
+        Rect rect = new Rect();
+        view.getWindowVisibleDisplayFrame(rect);
+        int statusBarHeight = rect.top;
+
+        WindowManager windowManager = activity.getWindowManager();
+
+        //获取屏幕宽和高
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        windowManager.getDefaultDisplay().getMetrics(outMetrics);
+        int width = outMetrics.widthPixels;
+        int height =1000;
+
+        //去掉状态栏
+        Bitmap bitmap = Bitmap.createBitmap(view.getDrawingCache(), 0, statusBarHeight, width,
+                height-statusBarHeight);
+
+        //销毁缓存信息
+        view.destroyDrawingCache();
+        view.setDrawingCacheEnabled(false);
+
+        return bitmap;
+    }
+
+
+    public void saveBitmapFile(Bitmap bitmap){
+
+        File temp = new File("/sdcard/Express/");//要保存文件先创建文件夹
+        if (!temp.exists()) {
+            temp.mkdir();
+        }
+        ////重复保存时，覆盖原同名图片
+        File file=new File("/sdcard/Express/1.jpg");//将要保存图片的路径和图片名称
+        //    File file =  new File("/sdcard/1delete/1.png");/////延时较长
+        try {
+            BufferedOutputStream bos= new BufferedOutputStream(new FileOutputStream(file));
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bos);
+            bos.flush();
+            bos.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //清除背景白色边缘
+    private static Bitmap getAlphaBitmap(Bitmap mBitmap, int mColor)
+    {
+        Bitmap mAlphaBitmap = Bitmap.createBitmap(mBitmap.getWidth(), mBitmap.getHeight(), Bitmap.Config.ARGB_8888);
+
+        int mBitmapWidth = mAlphaBitmap.getWidth();
+        int mBitmapHeight = mAlphaBitmap.getHeight();
+
+        for (int i = 0; i < mBitmapHeight; i++)
+        {
+            for (int j = 0; j < mBitmapWidth; j++)
+            {
+                int color = mBitmap.getPixel(j, i);
+                if (color == mColor)
+                {
+                    mAlphaBitmap.setPixel(j, i,Color.argb(10,255,255,255));
+                }
+                else {
+                    mAlphaBitmap.setPixel(j, i, color);
+                }
+            }
+        }
+
+        return mAlphaBitmap;
+    }
+
+    public void createQRcodeImage(String url)
+    {
+        im2=(ImageView)findViewById(R.id.imageView1);
+        w=im2.getWidth();
+        h=im2.getHeight();
+        try
+        {
+            //判断URL合法性
+            if (url == null || "".equals(url) || url.length() < 1)
+            {
+                return;
+            }
+            Hashtable<EncodeHintType, String> hints = new Hashtable<EncodeHintType, String>();
+            hints.put(EncodeHintType.CHARACTER_SET, "utf-8");
+            //图像数据转换，使用了矩阵转换
+            BitMatrix bitMatrix = new QRCodeWriter().encode(url, BarcodeFormat.QR_CODE, w, h, hints);
+            int[] pixels = new int[w * h];
+            //下面这里按照二维码的算法，逐个生成二维码的图片，
+            //两个for循环是图片横列扫描的结果
+            for (int y = 0; y < h; y++)
+            {
+                for (int x = 0; x < w; x++)
+                {
+                    if (bitMatrix.get(x, y))
+                    {
+                        pixels[y * w + x] = 0xff000000;
+                    }
+                    else
+                    {
+                        pixels[y * w + x] = 0xffffffff;
+                    }
+                }
+            }
+            //生成二维码图片的格式，使用ARGB_8888
+            Bitmap bitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+            bitmap.setPixels(pixels, 0, w, 0, 0, w, h);
+            //显示到我们的ImageView上面
+            bitmap= getAlphaBitmap(bitmap, Color.WHITE);
+            im2.setImageBitmap(bitmap);
+        }
+        catch (WriterException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     //给二维码添加图片
