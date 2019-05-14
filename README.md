@@ -2,6 +2,7 @@
 
 <p>
 <img src='https://img.shields.io/hexpm/l/plug.svg'>
+<img src='https://img.shields.io/appveyor/ci/gruntjs/grunt/master.svg'>
 </p>
 
 项目主要是想从根源上解决物流行业中快递面单上个人隐私泄露问题。本项目通过长期调查研究和文献查阅，开发了一款“快递管家”物流APP，使用此软件的用户无论是寄件还是收取快递的过程中都能自动将信息加密，避免了个人隐私泄露所带来的一系列隐患，达到保护用户信息安全的目的。
