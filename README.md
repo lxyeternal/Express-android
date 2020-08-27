@@ -9,8 +9,8 @@
 
 在项目的实现中，分段加密使用的加密算法是RSA加密和Base64编码。在最近我们加入了基于Logistic映射的混沌加密算法，在项目中只是用来测试的。
 <div align="center">
-<img width="260" height="450" src="https://github.com/wenboi/Express-android/raw/master/image/2.jpg"/>
-<img width="260" height="450" src="https://github.com/wenboi/Express-android/raw/master/image/1.jpg"/>
-<img width="260" height="450" src="https://github.com/wenboi/Express-android/raw/master/image/3.jpg"/>
-<img width="260" height="450" src="https://github.com/wenboi/Express-android/raw/master/image/4.jpg"/>
+<img width="260" height="450" src="https://github.com/lxyeternal/Express-android/blob/master/image/2.jpg"/>
+<img width="260" height="450" src="https://github.com/lxyeternal/Express-android/blob/master/image/1.jpg"/>
+<img width="260" height="450" src="https://github.com/lxyeternal/Express-android/blob/master/image/3.jpg"/>
+<img width="260" height="450" src="https://github.com/lxyeternal/Express-android/blob/master/image/4.jpg"/>
 </div>
